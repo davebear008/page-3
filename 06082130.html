@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: white;
+    }
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://images.alphacoders.com/123/1239346.png");
+      background-size: cover;
+      backdrop-filter: blur(5px);
+    }
+    #center-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      animation: flip 3s infinite linear;
+    }
+
+    @keyframes flip {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+
+    #profile {
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    #social-links {
+      text-align: center;
+    }
+
+    #social-links a {
+      margin: 0 10px;
+    }
+
+    #articles {
+      text-align: center;
+    }
+
+    #articles ol {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #articles li {
+      padding-bottom: 20px;
+    }
+
+    #social-links a, #articles a {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 5px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+
+#social-links a:hover, #articles a:hover {
+  background-color: #FFD700;  
+  color: #000;
+  box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700;  
+}
+    #connectButton {
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #0066ff; /* 这是按钮的背景色，你可以根据需要更改 */
+  color: white; /* 这是按钮文字的颜色，你可以根据需要更改 */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#connectButton:hover {
+  background-color: #9999ff; /* 这是鼠标悬停在按钮上时的背景色，你可以根据需要更改 */
+}
+    #nft-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .image-container {
+      position: relative;
+      margin: 0;
+    }
+    #nft-gallery .image-container {
+  width: 200px;
+  height: 200px;
+}
+
+#nft-gallery .image-container .nft {
+  display: none;
+}
+
+#nft-gallery .image-container .display-img {
+  width: 100%;
+  height: auto;
+}
+
+    .hexagon {
+      width: 200px;
+      height: 200px;
+      background-color: #ddd;
+      position: relative;
+      margin: 10px;
+    }
+
+    .hexagon img {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+
+    .hexagon img.active {
+      display: block;
+    }
+
+    .prev-button,
+    .next-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    #nft-gallery .image-container .nft img {
+  display: none;
+}
+
+#nft-gallery .image-container .nft img.active {
+  display: block;
+}
+  </style>
+</head>
+<body>
+  <div id="background">
+   <div id="center-container">
+    <div id="profile">
+      <img id="avatar" src="https://i.postimg.cc/x1wpQWq3/seadao-avatar.jpg" alt="头像" />
+      <h1>Davefff</h1>
+      <h2>Web3 爱好者</h2>
+    </div>
+
+    <div id="social-links">
+      <a href="https://discord.gg/K47KBtuVDj" target="_blank">
+        <img src="https://i.postimg.cc/fyd6nmhB/discord-logo.png" alt="Discord Logo" style="height: 20px;border-radius: 50%;"> Discord
+      </a>
+      <a href="https://mirror.xyz/" target="_blank">
+      <img src="https://i.postimg.cc/MZRv8npn/Mirror.png" alt="Discord Logo" style="height: 20px;border-radius: 50%;">Mirror</a>
+      <a href="https://twitter.com/" target="_blank">
+      <img src="https://i.postimg.cc/CLMCM36T/twitter.png" alt="Discord Logo" style="height: 20px;border-radius: 50%;">  Twitter</a>
+      <!-- 其他社交媒体链接 -->
+    </div>
+
+    <div id="articles">
+      <h2>推荐文章</h2>
+      <ol>
+        <li><a href="https://mp.weixin.qq.com/s/iQ7CIL-NdwqOOjuCdPwHJA" target="_blank">DAO.edu：去中心化学习的未来</a></li>
+        <li><a href="https://mp.weixin.qq.com/s/IVwouuaRy1GKViCpcpvKzA" target="_blank">DAO非一时流行，是未来</a></li>
+        <li><a href="https://mp.weixin.qq.com/s/CzHyCTD1K9JTqC2iWZDDow" target="_blank">2022：人类组织重构，走进社区 DAO 时代</a></li>
+      </ol>
+    </div>
+
+    <div id="nft-gallery">
+      <div class="image-container">
+        <div class="nft">
+         <img src="https://i.postimg.cc/x1wpQWq3/seadao-avatar.jpg" alt="NFT作品1" />
+         <img src="https://i.postimg.cc/wxcc4p0C/66.jpg" alt="NFT作品2" />
+         <img src="https://i.postimg.cc/fyT3g6bs/55.jpg" alt="NFT作品3" />
+         <img src="https://i.postimg.cc/bvcZjGv3/44.jpg" alt="NFT作品4" />
+         <img src="https://i.postimg.cc/MHNWb4Md/33.jpg" alt="NFT作品5" />
+         <img src="https://i.postimg.cc/cLQswFsB/22.jpg" alt="NFT作品6" />
+     </div>
+  </div>
+    <div class="image-container">
+      <img src="" alt="NFT作品" class="display-img">
+  </div>
+    <div class="image-container">
+      <img src="" alt="NFT作品" class="display-img">
+  </div>
+     <div class="image-container">
+       <img src="" alt="NFT作品" class="display-img">
+  </div>
+   <button id="connectButton">Connect Wallet</button>
+</div>
+   <script>
+  let imageIndex = 0;
+const images = Array.from(document.querySelectorAll("#nft-gallery .image-container .nft img"));
+const displayImages = (start) => {
+  let displayImgs = Array.from(document.querySelectorAll(".display-img"));
+  displayImgs.forEach((displayImg, index) => {
+    let imgIndex = (start + index) % images.length;
+    displayImg.src = images[imgIndex].src;
+    displayImg.alt = images[imgIndex].alt;
+  });
+};
+
+displayImages(imageIndex);
+
+setInterval(() => {
+  imageIndex = (imageIndex + 1) % images.length;
+  displayImages(imageIndex);
+}, 3000);
+ const button = document.getElementById('connectButton');
+
+    button.addEventListener('click', () => {
+        if (window.ethereum) {
+            window.ethereum.enable().then((account) => {
+                const defaultAccount = account[0];
+                console.log(`用户的账号是 ${defaultAccount}`);
+                // 你可以在这里将账号保存起来，或者做其他你想做的事情
+            }).catch((err) => {
+                // 用户可能拒绝了连接请求，或者连接时出现了其他错误
+                console.error(`用户拒绝了请求: ${err}`);
+            });
+        } else {
+            console.log('没有可用的以太坊连接，你需要安装Metamask或者类似的插件');
+        }
+    }); 
+</script>
+</body>
+</html>
